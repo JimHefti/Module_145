@@ -32,6 +32,7 @@ b.     Click the Terminal application icon. Verify that the Port Configuration d
 
 ### Question:
 What is the setting for bits per second?
+###### 9600 bits per second
 
 c.     The screen that appears may have several messages displayed. Somewhere on the screen there should be a Press RETURN to get started! message. Press ENTER.
 
