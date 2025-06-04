@@ -31,14 +31,13 @@ a.     Click PC1 and then select the Desktop tab.
 b.     Click the Terminal application icon. Verify that the Port Configuration default settings are correct.
 
 ### Question:
-What is the setting for bits per second?
-###### A: 9600 bits per second
+What is the setting for bits per second?A: 9600 bits per second
 
 c.     The screen that appears may have several messages displayed. Somewhere on the screen there should be a Press RETURN to get started! message. Press ENTER.
 
 ### Question:
 What is the prompt displayed on the screen?
-###### A:S1>
+A: S1>
 ###### Packet Tracer - Navigate the IOS
 
 
@@ -51,7 +50,7 @@ S1> ?
 
 ### Question:
 Which command begins with the letter ‘C’?
-###### A: connect     Open a terminal connection
+A: connect     Open a terminal connection
 
 b.     At the prompt, type t and then a question mark (?).
 
@@ -59,14 +58,15 @@ S1> t?
 
 ### Question:
 Which commands are displayed?
-
+A: telnet  terminal  traceroute 
 At the prompt, type te and then a question mark (?).
 
 S1> te?
 
 ### Question:
 Which commands are displayed?
-###### A: telnet  terminal  traceroute 
+A: telnet  terminal
+
 This type of help is known as context-sensitive help. It provides more information as the commands are expanded.
 
 # Part 2: Explore EXEC Modes
@@ -78,24 +78,25 @@ a.     At the prompt, type the question mark (?).
 S1> ?
 
 ### Question:
-What information is displayed for the enable command?
+What information is displayed for the enable command? A: Turn on privileged commands
 
 b.     Type en and press the Tab key.
 
 S1> en<Tab>
 
 ### Question:
-What displays after pressing the Tab key?
+What displays after pressing the Tab key? A: Enable
 
 This is called command completion (or tab completion). When part of a command is typed, the Tab key can be used to complete the partial command. If the characters typed are enough to make the command unique, as in the case of the enable command, the remaining portion of the command is displayed.
 
 ### Question:
 What would happen if you typed te<Tab> at the prompt?
+A: It would not display anything
 
 c.     Enter the enable command and press ENTER.
 
 ### Question:
-How does the prompt change?
+How does the prompt change? A: A: From S1> to S1#
 
 d.     When prompted, type the question mark (?).
 
@@ -104,7 +105,7 @@ S1# ?
 One command starts with the letter ‘C’ in user EXEC mode.
 
 ### Question:
-How many commands are displayed now that privileged EXEC mode is active? (Hint: you could type c? to list just the commands beginning with ‘C’.)
+How many commands are displayed now that privileged EXEC mode is active? (Hint: you could type c? to list just the commands beginning with ‘C’.) A: 5 commands starting with 'C' clear, clock, configure, conecct and copy
 
 ## Step 2: Enter Global Configuration mode
 a.     When in privileged EXEC mode, one of the commands starting with the letter ‘C’ is configure. Type either the full command or enough of the command to make it unique. Press the <Tab> key to issue the command and press ENTER.
