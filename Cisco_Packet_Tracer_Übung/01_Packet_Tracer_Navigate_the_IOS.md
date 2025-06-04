@@ -51,6 +51,7 @@ S1> ?
 
 ### Question:
 Which command begins with the letter ‘C’?
+###### A: connect     Open a terminal connection
 
 b.     At the prompt, type t and then a question mark (?).
 
@@ -65,7 +66,7 @@ S1> te?
 
 ### Question:
 Which commands are displayed?
-
+###### A: telnet  terminal  traceroute 
 This type of help is known as context-sensitive help. It provides more information as the commands are expanded.
 
 # Part 2: Explore EXEC Modes
