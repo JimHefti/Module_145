@@ -32,12 +32,15 @@ b.     Click the Terminal application icon. Verify that the Port Configuration d
 
 ### Question:
 What is the setting for bits per second?
-###### 9600 bits per second
+###### A: 9600 bits per second
 
 c.     The screen that appears may have several messages displayed. Somewhere on the screen there should be a Press RETURN to get started! message. Press ENTER.
 
 ### Question:
 What is the prompt displayed on the screen?
+###### A:S1>
+###### Packet Tracer - Navigate the IOS
+
 
 ## Step 3: Explore the IOS Help.
 a.     The IOS can provide help for commands depending on the level accessed. The prompt currently displayed is called User EXEC, and the device is waiting for a command. The most basic form of help is to type a question mark (?) at the prompt to display a list of commands.
