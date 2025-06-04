@@ -91,7 +91,7 @@ This is called command completion (or tab completion). When part of a command is
 
 ### Question:
 What would happen if you typed te<Tab> at the prompt?
-A: It would not display anything
+A: Ambiguous command: "cl"
 
 c.     Enter the enable command and press ENTER.
 
@@ -113,12 +113,12 @@ a.     When in privileged EXEC mode, one of the commands starting with the lette
 S1# configure
 
 ### Question:
-What is the message that is displayed?
+What is the message that is displayed? A: Configuring from terminal, memory, or network [terminal]?
 
 b.     Press Enter to accept the default parameter that is enclosed in brackets [terminal].
 
 ### Question:
-How does the prompt change?
+How does the prompt change? A: From S1# to S1(config)#
 
 c.     This is called global configuration mode. This mode will be explored further in upcoming activities and labs. For now, return to privileged EXEC mode by typing end, exit, or Ctrl-Z.
 
@@ -133,28 +133,28 @@ a.     Use the clock command to further explore Help and command syntax. Type sh
 S1# show clock
 
 ### Question:
-What information is displayed? What is the year that is displayed?
+What information is displayed? What is the year that is displayed? A: *20:18:0.604 UTC Tue Mar 2 1993
 
 b.     Use the context-sensitive help and the clock command to set the time on the switch to the current time. Enter the command clock and press ENTER.
 
 S1# clock<ENTER>
 
 ### Question
-What information is displayed?
+What information is displayed? A: % Incomplete command.
 
 c.     The “% Incomplete command” message is returned by the IOS. This indicates that the clock command needs more parameters. Any time more information is needed, help can be provided by typing a space after the command and the question mark (?).
 
 S1# clock ?
 
 ### Question:
-What information is displayed?
+What information is displayed? A: set Set the time and date
 
 d.     Set the clock using the clock set command. Proceed through the command one step at a time.
 
 S1# clock set ?
 
 ### Questions:
-What information is being requested?
+What information is being requested? A: HH:MM:SS Current Tim
 
 What would have been displayed if only the clock set command had been entered, and no request for help was made by using the question mark?
 
@@ -186,19 +186,19 @@ b.     Issue the following commands and record the messages:
 S1# cl<tab>
 
 ### Questions:
-What information was returned?
+What information was returned? A: Ambiguous command: "cl"
 
 S1# clock
 
 ### Question:
-What information was returned?
+What information was returned? A: % Incomplete command.
 
 S1# clock set 25:00:00
 
 ### Question:
-What information was returned?
+What information was returned? A: % Invalid input detected at ‘^’ marker.
 
 S1# clock set 15:00:00 32
 
 ### Question:
-What information was returned?
+What information was returned? A: % Invalid input detected at '^' marker.
