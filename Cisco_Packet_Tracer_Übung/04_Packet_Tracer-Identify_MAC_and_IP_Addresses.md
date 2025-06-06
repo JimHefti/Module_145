@@ -12,29 +12,13 @@ Instructions
 ## Part 1: Gather PDU Information for Local Network Communication
 Note: Review the Reflection Questions in Part 3 before proceeding with Part 1. It will give you an idea of the type of information you will need to gather.Gather PDU information as a packet travels from 172.16.31.5 to 172.16.31.2.
 
-a.     Click 172.16.31.5 and open the Command Prompt.
-
-b.     Enter the ping 172.16.31.2 command.
-
-c.     Switch to simulation mode and repeat the ping 172.16.31.2 command. A PDU appears next to 172.16.31.5.
-
-d.     Click the PDU and note the following information from the OSI Model and Outbound PDU Layer tabs:
-
-o    Destination MAC Address: 000C:85CC:1DA7
-
-o    Source MAC Address: 00D0:D311:C788
-
-o    Source IP Address: 172.16.31.5
-
-o    Destination IP Address: 172.16.31.2
-
-o    At Device: 172.16.31.5
-
-What device has the destination MAC that is shown? Switch 1
 
 ### Ping from 172.16.31.5 to 172.16.31.2
 
-
+ At Device     | Dest. MAC       | Src MAC         | Src IPv4       | Dest IPv4      |
+|---------------|------------------|------------------|----------------|----------------|
+| 172.16.31.5   | 000:FF:FF:FF:FF:FF | 00D0:D311:C2F5   | 172.16.31.5    | 172.16.31.2    |
+| Switch1       | FF:FF:FF:FF:FF:FF | 00D0:D311:C2F5   | 172.16.31.5    | 172.16.31.2    |
 
 e.     Click Capture / Forward (the right arrow followed by a vertical bar) to move the PDU to the next device. Gather the same information from Step 1d. Repeat this process until the PDU reaches its destination. Record the PDU information you gathered into a spreadsheet using a format like the table shown below:
 
