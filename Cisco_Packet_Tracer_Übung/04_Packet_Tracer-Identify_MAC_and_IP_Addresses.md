@@ -32,11 +32,14 @@ o    At Device: 172.16.31.5
 
 What device has the destination MAC that is shown? Switch 1
 
+### Ping from 172.16.31.5 to 172.16.31.2
+
 
 
 e.     Click Capture / Forward (the right arrow followed by a vertical bar) to move the PDU to the next device. Gather the same information from Step 1d. Repeat this process until the PDU reaches its destination. Record the PDU information you gathered into a spreadsheet using a format like the table shown below:
 
-Example Spreadsheet Format
+
+
 
 
 Step 2: Gather additional PDU information from other pings.
