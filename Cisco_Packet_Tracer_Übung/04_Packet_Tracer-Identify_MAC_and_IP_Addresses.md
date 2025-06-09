@@ -1,117 +1,120 @@
-# Packet Tracer – MAC- und IP-Adressen identifizieren
-
-## Zielsetzung
-
-- **Teil 1:** PDU-Daten im lokalen Netzwerk erfassen  
-- **Teil 2:** PDU-Daten bei Kommunikation über Netzwerke hinweg erfassen  
-- **Teil 3:** Reflexionsfragen beantworten
+# Packet Tracer – Identify MAC and IP Addresses
 
 ---
 
-## Teil 1: Lokale Netzwerkkommunikation – PDU-Informationen
+## Objectives
 
-### Ping von 172.16.31.5 → 172.16.31.2
-
-| Gerät       | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
-|------------|----------------|----------------|--------------|--------------|
-| 172.16.31.5 | 000C:85CC:1DA7 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.2  |
-| Switch1     | 000C:85CC:1DA7 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.2  |
-| 172.16.31.2 | 00D0:D311:C788 | 000C:85CC:1DA7 | 172.16.31.2  | 172.16.31.5  |
-
-### Ping von 172.16.31.3 → 172.16.31.2
-
-| Gerät       | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
-|------------|----------------|----------------|--------------|--------------|
-| 172.16.31.3 | 000C:85CC:1DA7 | 00D0:588C:2401 | 172.16.31.3  | 172.16.31.2  |
-| Switch1     | 000C:85CC:1DA7 | 00D0:588C:2401 | 172.16.31.3  | 172.16.31.2  |
-| 172.16.31.2 | 00D0:588C:2401 | 000C:85CC:1DA7 | 172.16.31.2  | 172.16.31.3  |
-
-### Ping von 172.16.31.5 → 172.16.31.4
-
-| Gerät       | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
-|------------|----------------|----------------|--------------|--------------|
-| 172.16.31.5 | 00D0:234C:1FA1 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.4  |
-| Switch1     | 00D0:234C:1FA1 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.4  |
-| 172.16.31.4 | 00D0:D311:C788 | 00D0:234C:1FA1 | 172.16.31.4  | 172.16.31.5  |
+- Part 1: Gather PDU Information for Local Network Communication  
+- Part 2: Gather PDU Information for Remote Network Communication  
+- Part 3: Answer Reflection Questions
 
 ---
 
-## Teil 2: Kommunikation über Netzwerke hinweg – PDU-Informationen
+## Part 1: Local Network PDU Data Collection
 
-### Ping von 172.16.31.5 → 10.10.10.2
+### Ping from 172.16.31.5 to 172.16.31.2
 
-| Gerät         | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
-|---------------|----------------|----------------|--------------|--------------|
-| 172.16.31.5    | 00D0:BA8E:741A | 00D0:D311:C788 | 172.16.31.5  | 10.10.10.2   |
-| Switch1        | 00D0:BA8E:741A | 00D0:D311:C788 | 172.16.31.5  | 10.10.10.2   |
-| Router         | 0060:2F84:4AB6 | 00D0:BA8E:741A | 172.16.31.5  | 10.10.10.2   |
-| Switch0        | 0060:2F84:4AB6 | 00D0:588C:2401 | 172.16.31.5  | 10.10.10.2   |
-| Access Point   | 0060:2F84:4AB6 | 00D0:588C:2401 | 172.16.31.5  | 10.10.10.2   |
-| 10.10.10.2     | 00D0:588C:2401 | 0060:2F84:4AB6 | 10.10.10.2   | 172.16.31.5  |
+| At Device   | Dest. MAC        | Src MAC         | Src IPv4     | Dest IPv4    |
+|------------|------------------|------------------|--------------|--------------|
+| 172.16.31.5 | 000C:85CC:1DA7   | 00D0:D311:C788   | 172.16.31.5  | 172.16.31.2  |
+| Switch1     | 000C:85CC:1DA7   | 00D0:D311:C788   | 172.16.31.5  | 172.16.31.2  |
+| 172.16.31.2 | 00D0:D311:C788   | 000C:85CC:1DA7   | 172.16.31.2  | 172.16.31.5  |
+
+### Ping from 172.16.31.3 to 172.16.31.2
+
+| At Device   | Dest. MAC        | Src MAC         | Src IPv4     | Dest IPv4    |
+|------------|------------------|------------------|--------------|--------------|
+| 172.16.31.3 | 000C:85CC:1DA7   | 00D0:588C:2401   | 172.16.31.3  | 172.16.31.2  |
+| Switch1     | 000C:85CC:1DA7   | 00D0:588C:2401   | 172.16.31.3  | 172.16.31.2  |
+| 172.16.31.2 | 00D0:588C:2401   | 000C:85CC:1DA7   | 172.16.31.2  | 172.16.31.3  |
+
+### Ping from 172.16.31.5 to 172.16.31.4
+
+| At Device   | Dest. MAC        | Src MAC         | Src IPv4     | Dest IPv4    |
+|------------|------------------|------------------|--------------|--------------|
+| 172.16.31.5 | 00D0:234C:1FA1   | 00D0:D311:C788   | 172.16.31.5  | 172.16.31.4  |
+| Switch1     | 00D0:234C:1FA1   | 00D0:D311:C788   | 172.16.31.5  | 172.16.31.4  |
+| 172.16.31.4 | 00D0:D311:C788   | 00D0:234C:1FA1   | 172.16.31.4  | 172.16.31.5  |
 
 ---
 
-## Teil 3: Reflexionsfragen – Antworten
+## Part 2: Remote Network PDU Data Collection
 
-1. **Wurden unterschiedliche Kabel oder Medien verwendet?**  
-   Ja, sowohl Kupferkabel (Ethernet) als auch drahtlose Verbindungen kamen zum Einsatz.
+### Ping from 172.16.31.5 to 10.10.10.2
 
-2. **Beeinflussen die Kabel die PDU-Struktur?**  
-   Nein, die PDU bleibt gleich, nur das Übertragungsmedium ändert sich.
+| At Device    | Dest. MAC       | Src MAC         | Src IPv4     | Dest IPv4    |
+|-------------|------------------|------------------|--------------|--------------|
+| 172.16.31.5  | 00D0:BA8E:741A   | 00D0:D311:C788   | 172.16.31.5  | 10.10.10.2   |
+| Switch1      | 00D0:BA8E:741A   | 00D0:D311:C788   | 172.16.31.5  | 10.10.10.2   |
+| Router       | 0060:2F84:4AB6   | 00D0:BA8E:741A   | 172.16.31.5  | 10.10.10.2   |
+| Switch0      | 0060:2F84:4AB6   | 00D0:588C:2401   | 172.16.31.5  | 10.10.10.2   |
+| Access Point | 0060:2F84:4AB6   | 00D0:588C:2401   | 172.16.31.5  | 10.10.10.2   |
+| 10.10.10.2   | 00D0:588C:2401   | 0060:2F84:4AB6   | 10.10.10.2   | 172.16.31.5  |
 
-3. **Hat der Hub Informationen verloren?**  
-   Nein, aber er leitet sie an alle angeschlossenen Ports weiter.
+---
 
-4. **Wie geht der Hub mit MAC- und IP-Adressen um?**  
-   Er verarbeitet diese nicht, sondern sendet alles an alle Ports.
+## Part 3: Reflection Questions & Reworded Answers
 
-5. **Hat der Access Point aktiv mit den Daten gearbeitet?**  
-   Ja, er leitete sie basierend auf der MAC-Adresse gezielt weiter.
+1. **Were there different types of cables/media used to connect devices?**  
+   ✔️ Yes, the setup included both Ethernet cables and wireless links.
 
-6. **Ging beim Funkverkehr eine MAC- oder IP-Adresse verloren?**  
-   Nein, alle Adressen blieben erhalten.
+2. **Did the cables change the handling of the PDU in any way?**  
+   ✔️ No, the format of the PDU remains constant; only the transmission path differs.
 
-7. **Auf welcher OSI-Schicht arbeiten Hub und Access Point maximal?**  
-   - Hub: Schicht 1 (Physikalisch)  
-   - Access Point: Schicht 2 (Sicherung)
+3. **Did the Hub lose any of the information that it received?**  
+   ✔️ No, a hub doesn’t drop data but sends it to all connected ports.
 
-8. **Haben Hub oder Access Point PDUs dupliziert, die abgelehnt wurden?**  
-   Nein, es wurde nichts weitergeleitet, was mit „rotem X“ markiert war.
+4. **What does the Hub do with MAC addresses and IP addresses?**  
+   ✔️ Hubs don’t analyze addresses—they blindly forward the frames to every port.
 
-9. **Welche MAC-Adresse steht im PDU-Detail zuerst?**  
-   Die Zieladresse erscheint vor der Quelladresse.
+5. **Did the wireless Access Point do anything with the information given to it?**  
+   ✔️ Yes, it used MAC addressing to forward the frame to the correct wireless client.
 
-10. **Warum erscheint zuerst die Zieladresse?**  
-    Damit das Frame korrekt zugestellt werden kann.
+6. **Was any MAC or IP address lost during the wireless transfer?**  
+   ✔️ No information was lost; both MAC and IP data remained intact.
 
-11. **Gab es ein Muster bei den MAC-Adressen?**  
-    Ja, Geräte desselben Typs hatten ähnliche Adress-Präfixe.
+7. **What was the highest OSI layer that the Hub and Access Point used?**  
+   - **Hub:** Layer 1 – Physical  
+   - **Access Point:** Layer 2 – Data Link
 
-12. **Haben Switches abgelehnte PDUs dupliziert?**  
-    Nein, sie arbeiten MAC-basiert und leiten gezielt weiter.
+8. **Did the Hub or Access Point ever replicate a PDU that was rejected with a red “X”?**  
+   ✔️ No, neither device duplicated any packet that failed.
 
-13. **Wo ändern sich die MAC-Adressen im Netzwerkpfad zwischen 172er und 10er-Netz?**  
-    Beim Übergang über den Router.
+9. **When examining the PDU Details tab, which MAC address appeared first, the source or the destination?**  
+   ✔️ The destination MAC was shown before the source.
 
-14. **Welche Geräte hatten MAC-Adressen mit 00D0:BA?**  
-    Eine Router-Schnittstelle, die mit dem 172.16.31.x-Netz verbunden ist.
+10. **Why would the MAC addresses appear in this order?**  
+    ✔️ Because forwarding a frame requires knowing the destination first.
 
-15. **Wer hatte die restlichen MAC-Adressen?**  
-    PCs, Router, Switches und Access Points.
+11. **Was there a pattern to the MAC addressing in the simulation?**  
+    ✔️ Yes, each device type had similar MAC address prefixes for easier identification.
 
-16. **Haben sich die IP-Adressen der Pakete auf dem Weg verändert?**  
-    Nein, sie bleiben durchgehend gleich.
+12. **Did the switches ever replicate a PDU that was rejected with a red “X”?**  
+    ✔️ No, switches only forward frames to known destinations based on their MAC tables.
 
-17. **Tauschen sich Quell- und Ziel-IP beim Ping-Antwortpaket?**  
-    Ja, Quelle wird Ziel und umgekehrt.
+13. **Where did the MAC addresses change during transmission between the 10 and 172 networks?**  
+    ✔️ The router acted as a boundary, updating the MAC addresses when crossing subnets.
 
-18. **Gab es ein Schema bei den IPs?**  
-    Ja: 172.16.31.x für interne Geräte, 10.10.10.x für externe.
+14. **Which device uses MAC addresses that start with 00D0:BA?**  
+    ✔️ That prefix was used by the router’s interface facing the 172.16.31.0 network.
 
-19. **Warum braucht ein Router verschiedene IP-Netze an seinen Ports?**  
-    Damit er unterschiedliche Subnetze verbinden und weiterleiten kann.
+15. **What devices did the other MAC addresses belong to?**  
+    ✔️ Each MAC was unique to its device—PCs, switches, routers, and APs all had their own.
 
-20. **Was wäre bei IPv6 anders?**  
-    - Adressen wären länger  
-    - Trennung durch Doppelpunkte  
-    - ARP wird durch NDP ersetzt
+16. **Did the sending and receiving IPv4 addresses change in any of the PDUs?**  
+    ✔️ No, the IP addresses remained consistent throughout the communication process.
+
+17. **When you follow the reply to a ping (pong), do the sending and receiving IPv4 addresses switch?**  
+    ✔️ Yes, the response inverts the source and destination roles.
+
+18. **What is the pattern to the IPv4 addressing used in this simulation?**  
+    ✔️ Local systems used the 172.16.31.x range, while remote systems used 10.10.10.x.
+
+19. **Why do different IP networks need to be assigned to different ports of a router?**  
+    ✔️ Because each port handles a distinct subnet and the router uses this to route traffic properly.
+
+20. **If this simulation was configured with IPv6 instead of IPv4, what would be different?**  
+    ✔️ IPv6 uses a different format: longer addresses, colon separators, and NDP replaces ARP for address resolution.
+
+---
+
