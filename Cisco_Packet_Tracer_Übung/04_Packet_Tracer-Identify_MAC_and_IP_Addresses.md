@@ -1,111 +1,117 @@
-# 04_Packet Tracer - Identify MAC and IP Addresses
-Objectives
-Part 1: Gather PDU Information for Local Network Communication
+# Packet Tracer – MAC- und IP-Adressen identifizieren
 
-Part 2: Gather PDU Information for Remote Network Communication
+## Zielsetzung
 
-Background
-This activity is optimized for viewing PDUs. The devices are already configured. You will gather PDU information in simulation mode and answer a series of questions about the data you collect.
+- **Teil 1:** PDU-Daten im lokalen Netzwerk erfassen  
+- **Teil 2:** PDU-Daten bei Kommunikation über Netzwerke hinweg erfassen  
+- **Teil 3:** Reflexionsfragen beantworten
 
-Instructions
+---
 
-## Part 1: Gather PDU Information for Local Network Communication
-Note: Review the Reflection Questions in Part 3 before proceeding with Part 1. It will give you an idea of the type of information you will need to gather.Gather PDU information as a packet travels from 172.16.31.5 to 172.16.31.2.
+## Teil 1: Lokale Netzwerkkommunikation – PDU-Informationen
 
+### Ping von 172.16.31.5 → 172.16.31.2
 
-### Ping from 172.16.31.5 to 172.16.31.2
+| Gerät       | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
+|------------|----------------|----------------|--------------|--------------|
+| 172.16.31.5 | 000C:85CC:1DA7 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.2  |
+| Switch1     | 000C:85CC:1DA7 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.2  |
+| 172.16.31.2 | 00D0:D311:C788 | 000C:85CC:1DA7 | 172.16.31.2  | 172.16.31.5  |
 
- At Device     | Dest. MAC       | Src MAC         | Src IPv4       | Dest IPv4      |
-|---------------|------------------|------------------|----------------|----------------|
-| 172.16.31.5   | 000:FF:FF:FF:FF:FF | 00D0:D311:C2F5   | 172.16.31.5    | 172.16.31.2    |
-| Switch1       | FF:FF:FF:FF:FF:FF | 00D0:D311:C2F5   | 172.16.31.5    | 172.16.31.2    |
+### Ping von 172.16.31.3 → 172.16.31.2
 
-e.     Click Capture / Forward (the right arrow followed by a vertical bar) to move the PDU to the next device. Gather the same information from Step 1d. Repeat this process until the PDU reaches its destination. Record the PDU information you gathered into a spreadsheet using a format like the table shown below:
+| Gerät       | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
+|------------|----------------|----------------|--------------|--------------|
+| 172.16.31.3 | 000C:85CC:1DA7 | 00D0:588C:2401 | 172.16.31.3  | 172.16.31.2  |
+| Switch1     | 000C:85CC:1DA7 | 00D0:588C:2401 | 172.16.31.3  | 172.16.31.2  |
+| 172.16.31.2 | 00D0:588C:2401 | 000C:85CC:1DA7 | 172.16.31.2  | 172.16.31.3  |
 
+### Ping von 172.16.31.5 → 172.16.31.4
 
+| Gerät       | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
+|------------|----------------|----------------|--------------|--------------|
+| 172.16.31.5 | 00D0:234C:1FA1 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.4  |
+| Switch1     | 00D0:234C:1FA1 | 00D0:D311:C788 | 172.16.31.5  | 172.16.31.4  |
+| 172.16.31.4 | 00D0:D311:C788 | 00D0:234C:1FA1 | 172.16.31.4  | 172.16.31.5  |
 
+---
 
+## Teil 2: Kommunikation über Netzwerke hinweg – PDU-Informationen
 
-Step 2: Gather additional PDU information from other pings.
-Repeat the process in Step 1 and gather the information for the following tests:
+### Ping von 172.16.31.5 → 10.10.10.2
 
-·         Ping 172.16.31.2 from 172.16.31.3.
+| Gerät         | Ziel-MAC       | Quell-MAC      | Quell-IP     | Ziel-IP      |
+|---------------|----------------|----------------|--------------|--------------|
+| 172.16.31.5    | 00D0:BA8E:741A | 00D0:D311:C788 | 172.16.31.5  | 10.10.10.2   |
+| Switch1        | 00D0:BA8E:741A | 00D0:D311:C788 | 172.16.31.5  | 10.10.10.2   |
+| Router         | 0060:2F84:4AB6 | 00D0:BA8E:741A | 172.16.31.5  | 10.10.10.2   |
+| Switch0        | 0060:2F84:4AB6 | 00D0:588C:2401 | 172.16.31.5  | 10.10.10.2   |
+| Access Point   | 0060:2F84:4AB6 | 00D0:588C:2401 | 172.16.31.5  | 10.10.10.2   |
+| 10.10.10.2     | 00D0:588C:2401 | 0060:2F84:4AB6 | 10.10.10.2   | 172.16.31.5  |
 
-·         Ping 172.16.31.4 from 172.16.31.5.
+---
 
-Return to Realtime mode.
+## Teil 3: Reflexionsfragen – Antworten
 
-## Part 2: Gather PDU Information for Remote Network Communication
-In order to communicate with remote networks, a gateway device is necessary. Study the process that takes place to communicate with devices on the remote network. Pay close attention to the MAC addresses used.
+1. **Wurden unterschiedliche Kabel oder Medien verwendet?**  
+   Ja, sowohl Kupferkabel (Ethernet) als auch drahtlose Verbindungen kamen zum Einsatz.
 
-Step 1: Gather PDU information as a packet travels from 172.16.31.5 to 10.10.10.2.
-a.     Click 172.16.31.5 and open the Command Prompt.
+2. **Beeinflussen die Kabel die PDU-Struktur?**  
+   Nein, die PDU bleibt gleich, nur das Übertragungsmedium ändert sich.
 
-b.     Enter the ping 10.10.10.2 command.
+3. **Hat der Hub Informationen verloren?**  
+   Nein, aber er leitet sie an alle angeschlossenen Ports weiter.
 
-c.     Switch to simulation mode and repeat the ping 10.10.10.2 command. A PDU appears next to 172.16.31.5.
+4. **Wie geht der Hub mit MAC- und IP-Adressen um?**  
+   Er verarbeitet diese nicht, sondern sendet alles an alle Ports.
 
-d.     Click the PDU and note the following information from the Outbound PDU Layer tab:
+5. **Hat der Access Point aktiv mit den Daten gearbeitet?**  
+   Ja, er leitete sie basierend auf der MAC-Adresse gezielt weiter.
 
-·         Destination MAC Address: 00D0:BA8E:741A
+6. **Ging beim Funkverkehr eine MAC- oder IP-Adresse verloren?**  
+   Nein, alle Adressen blieben erhalten.
 
-·         Source MAC Address: 00D0:D311:C788
+7. **Auf welcher OSI-Schicht arbeiten Hub und Access Point maximal?**  
+   - Hub: Schicht 1 (Physikalisch)  
+   - Access Point: Schicht 2 (Sicherung)
 
-·         Source IP Address: 172.16.31.5
+8. **Haben Hub oder Access Point PDUs dupliziert, die abgelehnt wurden?**  
+   Nein, es wurde nichts weitergeleitet, was mit „rotem X“ markiert war.
 
-·         Destination IP Address: 10.10.10.2
+9. **Welche MAC-Adresse steht im PDU-Detail zuerst?**  
+   Die Zieladresse erscheint vor der Quelladresse.
 
-·         At Device: 172.16.31.5
+10. **Warum erscheint zuerst die Zieladresse?**  
+    Damit das Frame korrekt zugestellt werden kann.
 
-Question:
-What device has the destination MAC that is shown?
+11. **Gab es ein Muster bei den MAC-Adressen?**  
+    Ja, Geräte desselben Typs hatten ähnliche Adress-Präfixe.
 
-e.     Click Capture / Forward (the right arrow followed by a vertical bar) to move the PDU to the next device. Gather the same information from Step 1d. Repeat this process until the PDU reaches its destination. Record the PDU information you gathered from pinging 172.16.31.5 to 10.10.10.2 into a spreadsheet using a format like the sample table shown below:
+12. **Haben Switches abgelehnte PDUs dupliziert?**  
+    Nein, sie arbeiten MAC-basiert und leiten gezielt weiter.
 
-At Device
+13. **Wo ändern sich die MAC-Adressen im Netzwerkpfad zwischen 172er und 10er-Netz?**  
+    Beim Übergang über den Router.
 
+14. **Welche Geräte hatten MAC-Adressen mit 00D0:BA?**  
+    Eine Router-Schnittstelle, die mit dem 172.16.31.x-Netz verbunden ist.
 
+15. **Wer hatte die restlichen MAC-Adressen?**  
+    PCs, Router, Switches und Access Points.
 
-## Reflection Questions
-Answer the following questions regarding the captured data:
+16. **Haben sich die IP-Adressen der Pakete auf dem Weg verändert?**  
+    Nein, sie bleiben durchgehend gleich.
 
-1. Were there different types of cables/media used to connect devices?
+17. **Tauschen sich Quell- und Ziel-IP beim Ping-Antwortpaket?**  
+    Ja, Quelle wird Ziel und umgekehrt.
 
-2. Did the cables change the handling of the PDU in any way?
+18. **Gab es ein Schema bei den IPs?**  
+    Ja: 172.16.31.x für interne Geräte, 10.10.10.x für externe.
 
-3. Did the Hub lose any of the information that it received?
+19. **Warum braucht ein Router verschiedene IP-Netze an seinen Ports?**  
+    Damit er unterschiedliche Subnetze verbinden und weiterleiten kann.
 
-4. What does the Hub do with MAC addresses and IP addresses?
-
-5. Did the wireless Access Point do anything with the information given to it?
-
-6. Was any MAC or IP address lost during the wireless transfer?
-
-7. What was the highest OSI layer that the Hub and Access Point used?
-
-8. Did the Hub or Access Point ever replicate a PDU that was rejected with a red “X”?
-
-9. When examining the PDU Details tab, which MAC address appeared first, the source or the destination?
-
-10. Why would the MAC addresses appear in this order?
-
-11. Was there a pattern to the MAC addressing in the simulation?
-
-12. Did the switches ever replicate a PDU that was rejected with a red “X”?
-
-13. Every time that the PDU was sent between the 10 network and the 172 network, there was a point where the MAC addresses suddenly changed. Where did that occur?
-
-14. Which device uses MAC addresses that start with 00D0:BA?
-
-15. What devices did the other MAC addresses belong to?
-
-16. Did the sending and receiving IPv4 addresses change fields in any of the PDUs?
-
-17. When you follow the reply to a ping, sometimes called a pong, do you see the sending and receiving IPv4 addresses switch?
-
-18. What is the pattern to the IPv4 addressing used in this simulation?
-
-19. Why do different IP networks need to be assigned to different ports of a router?
-
-20. If this simulation was configured with IPv6 instead of IPv4, what would be different?
-
+20. **Was wäre bei IPv6 anders?**  
+    - Adressen wären länger  
+    - Trennung durch Doppelpunkte  
+    - ARP wird durch NDP ersetzt
