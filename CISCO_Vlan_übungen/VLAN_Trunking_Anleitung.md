@@ -5,17 +5,17 @@
 ```bash
 conf t
 vlan 10
- name Admin
+name Admin
 vlan 20
- name Accounts
+name Accounts
 vlan 30
- name HR
+name HR
 vlan 40
- name Voice
+name Voice
 vlan 99
- name Management
+name Management
 vlan 100
- name Native
+name Native
 end
 ```
 
@@ -31,17 +31,17 @@ end
 interface fa0/1
  switchport mode access
  switchport access vlan 10
-exit
+
 
 interface fa0/2
  switchport mode access
  switchport access vlan 20
-exit
+
 
 interface fa0/3
  switchport mode access
  switchport access vlan 30
-exit
+
 ```
 
 ### SWC – Access Ports + Voice VLAN
@@ -83,7 +83,7 @@ interface g0/1
  switchport mode trunk
  switchport nonegotiate
  switchport trunk native vlan 100
-exit
+
 ```
 
 ### SWB – G0/1
@@ -94,7 +94,7 @@ interface g0/1
  switchport mode trunk
  switchport nonegotiate
  switchport trunk native vlan 100
-exit
+
 ```
 
 **Stichwort:** Statische Trunks mit ausgeschaltetem DTP und gleichem Native VLAN (100).
@@ -110,7 +110,7 @@ interface g0/2
  switchport trunk encapsulation dot1q
  switchport mode dynamic desirable
  switchport trunk native vlan 100
-exit
+
 ```
 
 ### SWC – G0/2 (falls Korrektur notwendig)
@@ -118,7 +118,7 @@ exit
 ```bash
 interface g0/2
  switchport trunk native vlan 100
-exit
+
 ```
 
 **Stichwort:** SWA handelt Trunking mit SWC aus, das im Standard auf dynamic auto steht.
@@ -134,7 +134,7 @@ interface vlan 99
  ip address 192.168.99.252 255.255.255.0
  no shutdown
 exit
-```
+
 
 ### SWB
 
@@ -142,7 +142,7 @@ exit
 interface vlan 99
  ip address 192.168.99.253 255.255.255.0
  no shutdown
-exit
+
 ```
 
 ### SWC
@@ -151,7 +151,7 @@ exit
 interface vlan 99
  ip address 192.168.99.254 255.255.255.0
  no shutdown
-exit
+
 ```
 
 **Stichwort:** Die Switches sollen sich **nicht gegenseitig pingen können**, da kein Routing aktiviert ist.
