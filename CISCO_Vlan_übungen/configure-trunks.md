@@ -1,4 +1,4 @@
-# Cisco Packet Tracer: Configure Trunks – Schritt-für-Schritt-Anleitung
+# Cisco Packet Tracer: Configure Trunks
 tzt.
 
 ---
