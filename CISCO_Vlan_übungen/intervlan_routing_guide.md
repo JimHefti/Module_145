@@ -4,7 +4,7 @@ Diese Anleitung beschreibt die vollständige Konfiguration für ein funktioniere
 
 ---
 
-## 🧩 Part 1: Switch S1 konfigurieren
+## Part 1: Switch S1 konfigurieren
 
 ### VLANs erstellen & benennen
 ```bash
@@ -74,7 +74,7 @@ write memory
 
 ---
 
-## 🧩 Part 2: Router R1 konfigurieren (Router-on-a-Stick)
+## Part 2: Router R1 konfigurieren (Router-on-a-Stick)
 
 ### Verbindung zum HQ (G0/0)
 ```bash
@@ -120,7 +120,7 @@ write memory
 
 ---
 
-## 💻 Part 3: IP-Konfiguration für PCs & Server
+## Part 3: IP-Konfiguration für PCs & Server
 
 In Packet Tracer: PC > Desktop > IP Configuration
 
@@ -133,7 +133,7 @@ In Packet Tracer: PC > Desktop > IP Configuration
 
 ---
 
-## 🧩 Part 4: Statische Route zum Servernetz (auf R1)
+## Part 4: Statische Route zum Servernetz (auf R1)
 
 ```bash
 ip route 172.17.50.0 255.255.255.0 172.17.25.1
@@ -141,7 +141,7 @@ ip route 172.17.50.0 255.255.255.0 172.17.25.1
 
 ---
 
-## 🔧 Part 5: Ping-Testplan zur Funktionsprüfung
+## Part 5: Ping-Testplan zur Funktionsprüfung
 
 Von jedem PC aus im Terminal (Command Prompt):
 ```bash
@@ -156,19 +156,4 @@ ping 172.17.20.22     ! PC2 aus PC1
 ping 172.17.30.23     ! PC3 aus PC2
 ```
 
----
 
-## ✅ Ergebnis: 100 %
-
-- Inter-VLAN Routing voll funktionsfähig
-- Alle VLANs korrekt erstellt und benannt
-- Access-Ports richtig zugewiesen
-- Trunk + Native VLAN korrekt konfiguriert
-- Switch Management erreichbar
-- Statisches Routing zum Server erfolgreich
-- Unbenutzte Ports disabled
-- Alle Tests bestanden
-
----
-
-Fertig!
