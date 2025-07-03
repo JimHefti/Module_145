@@ -12,16 +12,16 @@
 
 
 **Beobachtung / Ergebnis:**
--  **Ping schlägt fehl**
-- ARP-Request wird **nur innerhalb von VLAN 10** weitergeleitet
-- PC6 empfängt ihn nicht → **keine ARP-Antwort → kein Ping**
+-  Ping schlägt fehl
+- ARP-Request wird nur innerhalb von VLAN 10 weitergeleitet
+- PC6  ihn nicht  keine ARP-Antwort → kein Ping
 
 ---
 
 ###  Schritt 2: Ping von PC1 zu PC4 (VLAN10 → VLAN10)
 
 **Beobachtung / Ergebnis:**
-- **Ping erfolgreich**
+- Ping erfolgreich
 - ARP-Request wird im VLAN 10 gebroadcastet
 - PC4 antwortet → ICMP-Paket geht durch
 
@@ -34,7 +34,7 @@
 
 ### Schritt 1: Konfiguration löschen auf allen Switches
 
-**Auf jedem Switch (S1, S2, S3):**
+Auf jedem Switch (S1, S2, S3):
 
 ```
 erase startup-config
@@ -60,8 +60,8 @@ Switch#
 
 
 **Beobachtung / Ergebnis:**
--  **Ping funktioniert**
-- ARP-Request wird **an alle Ports** weitergeleitet
+-  Ping funktioniert
+- ARP-Request wird an alle Ports weitergeleitet
 - PC6 antwortet → Ping geht durch
 
 ---
